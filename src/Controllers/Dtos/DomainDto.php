@@ -2,33 +2,16 @@
 
 namespace App\Controllers\Dtos;
 
-class DomainDto
+use Spatie\DataTransferObject\DataTransferObject;
+
+class DomainDto extends DataTransferObject
 {
-    /** @var string */
-    public $tld;
+    public string $tld;
 
-    /** @var string */
-    public $domain;
+    public string $domain;
 
-    /** @var double */
-    public $price;
+    public float $price;
 
-    /** @var bool */
-    public $available;
-
-    /**
-     * DomainDto constructor.
-     * @param string $tld
-     * @param string $domain
-     * @param float  $price
-     * @param bool   $available
-     */
-    public function __construct(string $tld, string $domain, float $price, bool $available)
-    {
-        $this->tld = $tld;
-        $this->domain = $domain;
-        $this->price = $price;
-        $this->available = $available;
-    }
+    public bool $available;
 
 }
